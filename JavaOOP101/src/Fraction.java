@@ -1,8 +1,8 @@
-public class L04_Fraction {
+public class Fraction {
     public int btmN;
     public int topN;
 
-    public void addFraction(L04_Fraction F) {
+    public void addFraction(Fraction F) {
         this.topN = this.topN * F.btmN + F.topN * this.btmN;
         this.btmN = this.btmN * F.btmN;
     }

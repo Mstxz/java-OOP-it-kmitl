@@ -1,4 +1,4 @@
-public class L04_Student {
+public class Student {
     public String name;
     public double mScore;
     public double fScore;
