@@ -1,3 +1,4 @@
+/*Lab 4 - Student */
 public class Student {
     public String name;
     public double mScore;
