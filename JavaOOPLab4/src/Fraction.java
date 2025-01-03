@@ -2,9 +2,9 @@ public class Fraction {
     public int btmN;
     public int topN;
 
-    public void addFraction(Fraction F) {
-        this.topN = this.topN * F.btmN + F.topN * this.btmN;
-        this.btmN = this.btmN * F.btmN;
+    public void addFraction(Fraction f) {
+        this.topN = this.topN * f.btmN + f.topN * this.btmN;
+        this.btmN = this.btmN * f.btmN;
     }
 
     public String toFloat() {
