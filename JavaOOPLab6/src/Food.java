@@ -2,7 +2,7 @@ public class Food {
     private static final int energy = 10;
     private static double price = 50;
     
-    public void setPrice(double price) {
+    public static void setPrice(double price) {
         if (Food.price > price){
             System.out.println("Cannot update the food price.");
         }
@@ -11,11 +11,11 @@ public class Food {
         }
     }
 
-    public double getPrice() {
+    public static double getPrice() {
         return price;
     }
 
-    public int getEnergy() {
+    public static int getEnergy() {
         return energy;
     }
 }

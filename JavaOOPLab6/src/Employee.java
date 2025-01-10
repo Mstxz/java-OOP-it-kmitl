@@ -6,12 +6,15 @@ public class Employee {
 
 
     public boolean equals(Employee e){
-        return this.name.equals(e.name);
+        if (e == null) {
+            return false;
+        }
+        return this.name != null && this.name.equals(e.getName());
     }
 
     @Override
     public String toString(){
-        return "My name is "+this.name+"\nI have "+this.energy+" energy left.\nI have a balance of "+this.getWallet().getBalance()+" baht.";
+        return "My name is "+this.name+".\nI have "+this.energy+" energy left.\nI have a balance of "+this.getWallet().getBalance()+" baht.";
     }
 
     public boolean buyFood(Seller s){
@@ -26,7 +29,7 @@ public class Employee {
     }
 
     public void eat(Food f){
-        energy += f.getEnergy();
+        energy += Food.getEnergy();
     }
 
     public String getName(){
@@ -50,7 +53,7 @@ public class Employee {
     }
 
     public void setEnergy(int energy){
-        this.energy = energy;
+        this.energy = Math.max(energy, 0);
     }
 
     public static String getNationality(){
