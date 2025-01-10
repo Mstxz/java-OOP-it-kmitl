@@ -14,7 +14,7 @@ public class Employee {
 
     @Override
     public String toString(){
-        return "My name is "+this.name+".\nI have "+this.energy+" energy left.\nI have a balance of "+this.getWallet().getBalance()+" baht.";
+        return "My name is "+this.name+". \nI have "+this.energy+" energy left.\nI have a balance of "+this.getWallet().getBalance()+" baht.";
     }
 
     public boolean buyFood(Seller s){
