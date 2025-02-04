@@ -10,7 +10,7 @@ public class Pigeon extends Bird {
     }
 
     public void eat(String food){
-        if(food.equals("worm")){
+        if (food.equals("worm")){
             setWeight(getWeight()+0.5);
         }
         else if (food.equals("seed")){
