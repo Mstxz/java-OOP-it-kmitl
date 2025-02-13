@@ -14,9 +14,13 @@ public class MDIFormGUI {
     private final JMenu editMenu = new JMenu("Edit");
     private final JMenu viewMenu = new JMenu("View");
 
-    public MDIFormGUI(){
-        frame.setJMenuBar(menuBar);
+    private final JDesktopPane desktopPane = new JDesktopPane();
+    private final JInternalFrame miniFrame1 = new JInternalFrame("Application 1", true, true, false, true);
+    private final JInternalFrame miniFrame2 = new JInternalFrame("Application 2", true, true, false, true);
+    private final JInternalFrame miniFrame3 = new JInternalFrame("Application 3", true, true, false, true);
 
+    public MDIFormGUI() {
+        frame.setJMenuBar(menuBar);
         menuBar.add(fileMenu);
         fileMenu.add(newMenu);
         fileMenu.add(openMenuItem);
@@ -27,15 +31,33 @@ public class MDIFormGUI {
         newMenu.add(windowItem);
         newMenu.addSeparator();
         newMenu.add(messageItem);
-    
         menuBar.add(editMenu);
-
         menuBar.add(viewMenu);
 
-        frame.setSize(1920,1080);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().setBackground(Color.BLACK);
-        frame.setVisible(true);
+        frame.setContentPane(desktopPane);
+        desktopPane.setBackground(Color.BLACK);
 
+        miniFrame1.setSize(400, 300);
+        miniFrame1.setLocation(50, 50);
+        miniFrame1.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
+        miniFrame1.setVisible(true);
+
+        miniFrame2.setSize(400, 300);
+        miniFrame2.setLocation(500, 50);
+        miniFrame2.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
+        miniFrame2.setVisible(true);
+
+        miniFrame3.setSize(400, 300);
+        miniFrame3.setLocation(950, 50);
+        miniFrame3.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
+        miniFrame3.setVisible(true);
+
+        desktopPane.add(miniFrame1);
+        desktopPane.add(miniFrame2);
+        desktopPane.add(miniFrame3);
+
+        frame.setSize(1920, 1080);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 }

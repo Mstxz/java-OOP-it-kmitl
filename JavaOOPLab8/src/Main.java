@@ -1,23 +1,25 @@
 import java.util.Scanner;
+import javax.swing.SwingUtilities;
 
 public class Main {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number: ");
         int num = sc.nextInt();
-        switch (num){
-            case 1: 
-                new CalculatorOneGUI();
+        sc.close();  // Close scanner to prevent resource leaks
+
+        switch (num) {
+            case 1:
+                SwingUtilities.invokeLater(CalculatorOneGUI::new);
                 break;
             case 2:
-                new CalculatorTwoGUI();
+                SwingUtilities.invokeLater(CalculatorTwoGUI::new);
                 break;
             case 3:
-                new TellerGUI();
+                SwingUtilities.invokeLater(TellerGUI::new);
                 break;
             case 4:
-                new MDIFormGUI();
+                SwingUtilities.invokeLater(MDIFormGUI::new);
                 break;
             default:
                 System.out.println("Invalid.");
