@@ -1,7 +1,8 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
-public class TellerGUI {
+public class TellerGUI implements ActionListener {
     private final JFrame frame = new JFrame("TellerGUI");
     private final JPanel panelBalance = new JPanel();
     private final JPanel panelAmount = new JPanel();
@@ -17,6 +18,8 @@ public class TellerGUI {
     private final JButton withdraw = new JButton("Withdraw");
     private final JButton exit = new JButton("Exit");
 
+    private Account account = new Account(6000, null);
+
     public TellerGUI() {
         frame.add(panelBalance);
         frame.setLayout(new GridLayout(4,1));
@@ -24,7 +27,7 @@ public class TellerGUI {
         panelBalance.setLayout(new GridLayout(1, 2));
         panelBalance.add(this.labelBalance);
         panelBalance.add(this.textfieldBalance);
-        textfieldBalance.setText("6000");
+        textfieldBalance.setText(String.valueOf(account.getBalance()));
         textfieldBalance.setEditable(false);
 
         frame.add(panelAmount);
@@ -44,5 +47,25 @@ public class TellerGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setResizable(false);
+
+        this.deposit.addActionListener(this);
+        this.withdraw.addActionListener(this);
+        this.exit.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == this.deposit) {
+            double amount = Double.parseDouble(this.textfieldAmount.getText());
+            account.deposit(amount);
+            textfieldBalance.setText(String.valueOf(account.getBalance()));
+        } else if (e.getSource() == this.withdraw) {
+            double amount = Double.parseDouble(this.textfieldAmount.getText());
+            account.withdraw(amount);
+            textfieldBalance.setText(String.valueOf(account.getBalance()));
+        } else if (e.getSource() == this.exit) {
+            System.exit(0);
+        }
+        this.textfieldAmount.setText("");
     }
 }
