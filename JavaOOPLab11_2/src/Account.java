@@ -19,19 +19,25 @@ public class Account {
         }
     }
 
-    public void withdraw(double a) throws WithdrawException{
-        double temp = balance - a;
-        if (a < 0){
-            System.out.println("Input number must be a positive integer.");
-        }
-        else {
-            if (temp >= 0){
+    public void withdraw(double a) throws WithdrawException {
+        try {
+            if (a < 0) {
+                System.out.println("Input number must be a positive integer.");
+                return;
+            }
+
+            if (balance >= a) {
                 balance -= a;
-                System.out.println(a+" baht is withdrawn from "+name+".");
+                System.out.println(a + " baht is withdrawn from " + name + ".");
+            } else {
+                throw new WithdrawException(String.format("Account %s has not enough money.", name));
             }
-            else {
-                System.out.println("Not enough money!");
-            }
+        }
+        catch (WithdrawException w) {
+            throw w;
+        }
+        finally {
+            System.out.println("Thank you.");
         }
     }
 
