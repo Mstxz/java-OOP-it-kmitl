@@ -106,7 +106,7 @@ public class StudentView implements ActionListener {
 
     public Student loadFile() {
         Student student = null;
-        File file = new File("src/data/studentData.dat");  // Changed file extension to .dat
+        File file = new File("C:/Users/LAB203_xx/Desktop/java-OOP-it-kmitl/JavaOOPLab12_2/src/data/studentData.dat");  // Changed file extension to .dat
         if (file.exists()) {
             try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                 String line;
@@ -130,7 +130,7 @@ public class StudentView implements ActionListener {
     }
 
     public void createFile() {
-        File file = new File("src/data/studentData.dat");  // Changed file extension to .dat
+        File file = new File("C:/Users/LAB203_xx/Desktop/java-OOP-it-kmitl/JavaOOPLab12_2/src/data/studentData.dat");  // Changed file extension to .dat
         try {
             if (!file.exists()) {
                 file.createNewFile();
@@ -141,7 +141,7 @@ public class StudentView implements ActionListener {
     }
 
     public void saveFile() {
-        try (FileWriter fw = new FileWriter("src/data/studentData.dat", false)) {
+        try (FileWriter fw = new FileWriter("C:/Users/LAB203_xx/Desktop/java-OOP-it-kmitl/JavaOOPLab12_2/src/data/studentData.dat", false)) {
             fw.write(student.getID() + "," + student.getName() + "," + student.getMoney()); //collect to string for the studentData.dat file
         } catch (IOException e) {
             e.printStackTrace();

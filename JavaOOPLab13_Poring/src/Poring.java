@@ -9,7 +9,8 @@ public class Poring implements MouseListener {
     private JLabel poring = new JLabel();
     private JLabel countLabel = new JLabel();
 
-    private ImageIcon icon = new ImageIcon(getClass().getResource("/image/poring.png"));
+
+    private ImageIcon icon = new ImageIcon("C:/Users/LAB203_xx/Desktop/java-OOP-it-kmitl/JavaOOPLab13_Poring/src/image/poring.png");
 
     public Poring(int count, int x, int y){
         frame.setSize(300, 200);
@@ -27,7 +28,7 @@ public class Poring implements MouseListener {
 
         poring.addMouseListener(this);
 
-        //shake();
+        shake();
     }
 
     @Override
@@ -45,6 +46,6 @@ public class Poring implements MouseListener {
     public void mouseExited(MouseEvent e) {}
 
     public void shake(){
-        
+
     }
 }
