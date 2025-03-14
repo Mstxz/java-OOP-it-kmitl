@@ -24,11 +24,10 @@ public class Poring implements MouseListener {
 
         poring.setIcon(actual_poring_icon);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.setResizable(false);
         frame.setVisible(true);
 
         poring.addMouseListener(this);
-
-        shake();
     }
 
     @Override
@@ -45,7 +44,7 @@ public class Poring implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {}
 
-    public void shake(){
-
-    }
+    /*public void shake(){
+        
+    }*/
 }

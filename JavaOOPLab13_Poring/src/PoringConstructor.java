@@ -19,8 +19,11 @@ public class PoringConstructor implements ActionListener {
         frame.setVisible(true);
 
         button.addActionListener(this);
+        frame.add(button, BorderLayout.CENTER);
+
+        frame.setVisible(true);
     }
-    
+
     public static void main(String[] args){
         new PoringConstructor();
     } 
