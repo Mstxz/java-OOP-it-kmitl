@@ -44,7 +44,7 @@ public class Poring implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {}
 
-    public void shake(){
+    /*public void shake(){
         
-    }
+    }*/
 }
