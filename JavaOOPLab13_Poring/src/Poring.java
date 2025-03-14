@@ -27,7 +27,7 @@ public class Poring implements MouseListener {
 
         poring.addMouseListener(this);
 
-        shake();
+        //shake();
     }
 
     @Override
@@ -36,7 +36,7 @@ public class Poring implements MouseListener {
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {/* */}
+    public void mousePressed(MouseEvent e) {}
     @Override
     public void mouseReleased(MouseEvent e) {}
     @Override
@@ -45,14 +45,6 @@ public class Poring implements MouseListener {
     public void mouseExited(MouseEvent e) {}
 
     public void shake(){
-        int x = (int)(Math.random() * 200);
-        int y = (int)(Math.random() * 200);
-        frame.setBounds(x, y, 300, 200);
-        frame.setVisible(true);
-        frame.repaint();
-    }
-
-    public static void main(String[] args) {
-        new Poring(15, 0, 0);
+        
     }
 }
